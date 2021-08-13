@@ -6,7 +6,7 @@ This page provides some background into the work I was a part of during my casua
 
 
 
-My role was to support the front-end development of the Canadian Statistical Geospatial Explorer (CSGE) and it's API. I mainly focused on the [Geo-Explorer](https://github.com/SGC-CGS/geo-explorer), [Geo-Explorer API](https://github.com/SGC-CGS/geo-explorer-api), and [bundler](https://github.com/SGC-CGS/bundler). However, I was also involved in some of the other repositories for code reviews, peer-coding, and feedback. 
+My role was to support the front-end development of the Canadian Statistical Geospatial Explorer (CSGE) and it's API. I mainly focused on the [Geo-Explorer](https://github.com/SGC-CGS/geo-explorer), [Geo-Explorer API](https://github.com/SGC-CGS/geo-explorer-api), and [bundler](https://github.com/SGC-CGS/bundler). However, I was also involved in some of the other repositories for code reviews, peer-coding, and feedback.
 
 ## Table of Contents
 - Software / Tools
@@ -25,8 +25,6 @@ My role was to support the front-end development of the Canadian Statistical Geo
     - Charts
     - Bookmarks
     - Export
-    - Map and Chart Hover
-    - Use of web storage 
 - Documentation 
 - Acknowledgements
 
@@ -126,11 +124,19 @@ The elements in any chart can be highlighted for additional information. When a 
 
 **Bookmarks**
 
+Initially in the bookmark widget, a configuration of bookmarks is loaded containing views to different cities across Canada.
+
+![](img/bookmark.png)
+
+For example, if a user selected the bookmark "Abbotsford - Mission", then the view would change to that selected bookmark
+
+![](img/abbott.png)
+
+The cool part of the bookmarks widget is when users want to add a new bookmark. By saving a new bookmark, information such as data context, extent and name is saved. The data context comes from currently selected data (as seen on the map and in the select data widget).
+
 **Export**
 
-**Map and Chart Hover**
-
-**Use of Web Storage**
+This is currently in development as geoprocessing services are still being worked on. Once they are complete, users should be able to download data relevant to the selected data they are viewing. 
 
 ## Documentation
 
