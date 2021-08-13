@@ -1,9 +1,12 @@
 ## Welcome 
 
-This page provides some background into the work I was a part of during my casual contract at Statistic Canada's Statistical Geomatic Centre as a GIS Web Developer. 
+This page provides some background into the work I was a part of during my casual contract at [Statistics Canada's](https://www.statcan.gc.ca/eng/start) [Statistical Geomatics Centre](https://www12.statcan.gc.ca/census-recensement/2016/geo/index-eng.cfm) as a GIS Web Developer. 
+
+
+
+
 
 My role was to support the front-end development of the Canadian Statistical Geospatial Explorer (CSGE) and it's API. I mainly focused on the [Geo-Explorer](https://github.com/SGC-CGS/geo-explorer), [Geo-Explorer API](https://github.com/SGC-CGS/geo-explorer-api), and [bundler](https://github.com/SGC-CGS/bundler). However, I was also involved in some of the other repositories for code reviews, peer-coding, and feedback. 
-
 
 ## Table of Contents
 - Software / Tools
@@ -25,6 +28,7 @@ My role was to support the front-end development of the Canadian Statistical Geo
     - Map and Chart Hover
     - Use of web storage 
 - Documentation 
+- Acknowledgements
 
 ## Software
 #### IIS Manager
@@ -63,18 +67,62 @@ The main goal of the [CSGE](https://github.com/SGC-CGS) is to allow subject matt
 - [Geo-Explorer]((https://github.com/SGC-CGS/geo-explorer))
   -  The heaviest geo-explorer site rich with features, unlike the [Geo-Explorer Lite](https://github.com/SGC-CGS/geo-explorer-lite)
 - [Geo-Explorer Proxy](https://github.com/SGC-CGS/geo-explorer-proxy)
+  - A .NET proxy for handling client requests for resources
 - [Geo-Geocoder using Pelias](https://github.com/SGC-CGS/geo-geocoding)
   - Take a text description and return an address
 - [Bundler built with Rollup](https://github.com/SGC-CGS/bundler)
   - Provide cross-browser compatibility for geo-explorer sites
 
-#### Features
+#### Features 
+
+The features I'm highlighting below are ones I was tasked with continuing or producing. By the time you read this document the designs below may not match the current state of the CSGE as it is constantly evolving. 
 
 **Select Data**
 
+This widget is used for selecting data to display and interactive with in the map. It uses typeahead boxes as there can be an extensive amount of data to choose from. 
+
+![](img/selectData.png)
+
 **Styler**
 
+![](img/styler.png)
+
+The classification legend in the styler shows how data is grouped within the map. There are three methods for calculating breaks in the data:
+- Equal Intervals
+- Natural Breaks
+- Quintiles 
+
+There is also the option to set the number of breaks. The standard approach is to use between 4 and 6 classes. 5 classes is the default since diverging color schemes do not look great with an even number of classes as the middle break is where the diverging occurs. 
+
+![](img/classes.png)
+
+A visibility toggle is on the classification legend for the purpose of making holes in a break. You can see how this looks in the image below.
+
+![](img/vis.png)
+
+The color scheme picker is where users can make changes to the color scheme of the dataset as they may prefer not to use the default. 
+
+![](img/schemes.png)
+
+Additionally, users can show labels for the features in the layer on the map and change the overall opacity of the layer on the map.
+
+![](img/opaclabels.png)
+
 **Charts**
+
+In this widget, the chart button cannot be clicked until features on the map have been selected since the chart would not yet have been drawn. Once features have been selected, a chart will appear. In this document, only the bar chart and pie chart will be shown.
+
+![](img/barcharrt.png)
+
+The elements in any chart can be highlighted for additional information. When a chart element is highlighted, so is it's respective feature and vice versa.
+
+![](img/chartHover.png)
+
+![](img/featureHover.png)
+
+![](img/pieHover.png)
+
+![](img/pieFeature.png)
 
 **Bookmarks**
 
@@ -86,13 +134,13 @@ The main goal of the [CSGE](https://github.com/SGC-CGS) is to allow subject matt
 
 ## Documentation
 
-Word documents
+[JSDocs](https://jsdoc.app/) was used to provide a standardized way of writing comments in the CSGE. Microsoft Word was used to describe complex features in the CSGE as there can be a steep learning curve with all the concepts and patterns. 
 
-JSDocs
+#### Acknowledgements 
 
+[Statistics Canada](https://www.statcan.gc.ca/eng/start)
 
-#### Credits
-- Statistics Canada
-- SGC
-- Bruno St-Aubin
+[Statistical Geomatics Centre](https://www12.statcan.gc.ca/census-recensement/2016/geo/index-eng.cfm)
+
+[Bruno St-Aubin](https://github.com/staubibr)
 
