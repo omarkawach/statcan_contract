@@ -18,6 +18,7 @@ My role was to support the front-end development of the Canadian Statistical Geo
   - D3JS
 - Work Environment
   - Agile
+  - Git
 - The Canadian Statistical Geospatial Explorer
   - Widgets
     - Select Data
@@ -55,7 +56,11 @@ Developed by **[Esri](https://www.esri.com/en-us/home)**, the [ArcGIS JavaScript
 
 #### Agile
 
-[Agile](https://en.wikipedia.org/wiki/Agile_software_development) work environment's offer flexibility for employees and customers. As customer needs evolve, the development of the product also evolves in an iterative and incremental way. In this environment, the scrum framework is to organize teams to focus on certain features within a period of time (i.e., sprints). As part of scrum, there are daily scrum and occasional sprint planning meetings. Daily scrum meetings go over how things are progressing and if something needs addressing. The sprint planning meetings discuss tasks to take on for the period of the sprint and by the end of the sprint, the team goes into sprint review to provide feedback, ideas for improvement, and go over the work completed. 
+[Agile](https://en.wikipedia.org/wiki/Agile_software_development) work environment's offer flexibility for employees and customers. As customer needs evolve, the development of the product also evolves in an iterative and incremental way. In this environment, the scrum framework is to organize teams to focus on certain features within a period of time (i.e., sprints). As part of scrum, there are daily scrum and occasional sprint planning meetings. Daily scrum meetings go over how things are progressing and if something needs addressing. The sprint planning meetings discuss tasks to take on for the period of the sprint and by the end of the sprint, the team goes into sprint review to provide feedback, ideas for improvement, and go over the work completed.
+
+#### Git
+
+[Git](https://git-scm.com/) was chosen as the version control system for the development of the CSGE. Team members use git to commit code, perform code reviews, merge changes, and handle merge conflicts. 
 
 ## The Canadian Statistical Geospatial Explorer
 
@@ -64,6 +69,8 @@ The main goal of the [CSGE](https://github.com/SGC-CGS) is to allow subject matt
   - Provides the common code for geo-explorer sites
 - [Geo-Explorer]((https://github.com/SGC-CGS/geo-explorer))
   -  The heaviest geo-explorer site rich with features, unlike the [Geo-Explorer Lite](https://github.com/SGC-CGS/geo-explorer-lite)
+-  [Geo-Explorer ETL](https://github.com/SGC-CGS/geo-explorer-etl)
+   -  Python program to download Common Output Data Repository (CODR) products and insert the data into a database
 - [Geo-Explorer Proxy](https://github.com/SGC-CGS/geo-explorer-proxy)
   - A .NET proxy for handling client requests for resources
 - [Geo-Geocoder using Pelias](https://github.com/SGC-CGS/geo-geocoding)
@@ -124,19 +131,23 @@ The elements in any chart can be highlighted for additional information. When a 
 
 **Bookmarks**
 
-Initially in the bookmark widget, a configuration of bookmarks is loaded containing views to different cities across Canada.
+Initially in the bookmark widget, a configuration of bookmarks is loaded containing views to different cities across Canada. The bookmark widget has the ability to edit bookmark names, delete bookmarks, and save new bookmarks using the [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API).
 
 ![](img/bookmark.png)
 
-For example, if a user selected the bookmark "Abbotsford - Mission", then the view would change to that selected bookmark
+For example, if a user selected the bookmark "Abbotsford - Mission", then the view would change to that selected bookmark.
 
 ![](img/abbott.png)
 
-The cool part of the bookmarks widget is when users want to add a new bookmark. By saving a new bookmark, information such as data context, extent and name is saved. The data context comes from currently selected data (as seen on the map and in the select data widget).
+Another example would be if a user had previously saved a bookmark with a data context from the select data widget, they could switch to that context. 
+
+![](img/communityBookmark.png)
 
 **Export**
 
-This is currently in development as geoprocessing services are still being worked on. Once they are complete, users should be able to download data relevant to the selected data they are viewing. 
+This is currently in development as geoprocessing services are still being worked on. Once they are complete, users should be able to download data relevant to the selected data they are viewing. Therefore, only the UI has been built but not the complete functionality. 
+
+![](img/export.png)
 
 ## Documentation
 
